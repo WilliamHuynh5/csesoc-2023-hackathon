@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noEmit": false,
+    "target": "es5",
+    // "target": "esnext",
+    // "module": "esnext",
+    "lib": ["esnext"],
+  },
+  "include": [
+    "shared",
+    "src",
+    "package.json",
+    "package-lock.json",
+    "iter1",
+  ],
+  "exclude": [
+    "**/**_broken.ts"
+  ]
+}

@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Poppins";
+    src: url("../assets/Poppins-Regular.ttf") format("ttf");
+  }
+  .map-container {
+    width: 100%;
+    height: 100%;
+  }
+  .heading-text-stroke {
+    -webkit-text-stroke: 2px white;
+  }
+  .underline-animation {
+    position: relative;
+  }
+  .underline-animation::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .dynamic-txts {
+    color: black;
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    margin: auto;
+  }
+  .dynamic-txts:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: calc(100% + 8px);
+    width: 100%;
+    background-color: white;
+    border-left: 2px solid black;
+    animation: animate 2s steps(20) 1, blink-caret 0.75s step-end infinite;
+  }
+  @keyframes animate {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: black;
+    }
+  }
+}
